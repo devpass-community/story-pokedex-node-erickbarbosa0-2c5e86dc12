@@ -1,17 +1,19 @@
 const axios = require('axios');
 const getPokemon = async (id) => {
     const apiUrl = `https://pokeapi.co/api/v2/pokemon/${id}`;
-    let result;
+    let result 
     await axios
         .get(apiUrl)
         .then(
             function (response) {
-                // Add your solution here!
+               result = response.data
             }
         );
 
+        console.log(result);
     return result;
 };
+
 
 module.exports = {
     getPokemon
